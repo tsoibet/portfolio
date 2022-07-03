@@ -1,0 +1,347 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+    font-size: calc(10px + 0.5vw);
+    font-family: Arial, Helvetica, sans-serif;
+
+    --theme-bg-color: rgb(224, 233, 238);
+    --theme-color: rgb(41, 160, 230);
+    --theme-accent-color: rgb(255, 198, 13);
+    --theme-content-color: rgb(119, 119, 119);
+    --theme-shadow-color: rgb(185, 185, 185);
+    --theme-button-hover-color: rgb(57, 169, 235);
+    --theme-card-hover-color: rgb(255, 211, 65);
+}
+
+#container {
+    display: grid;
+    grid: auto 1fr / minmax(calc(150px + 5vw), max-content) 1fr;
+}
+
+#sidebar {
+    z-index: 2;
+
+    background-color: var(--theme-color);
+    color: white;
+    padding: 1rem;
+    font-weight: bold;
+    min-height: 100vh;
+
+    grid-row: 1 / span 2;
+
+    display: grid;
+    grid-template-rows: repeat(3, min-content);
+    gap: 3rem;
+}
+
+#logo {
+    cursor: pointer;
+    font-size: 1.3rem;
+
+    display: grid;
+    grid-template-columns: repeat(2, min-content);
+    gap: 0.5rem;
+    align-items: center;
+}
+
+#logo svg {
+    height: 2.5rem;
+}
+
+ul {
+    list-style-type: none;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 100%);
+}
+
+.menu li {
+    cursor: pointer;
+    border-radius: 1rem;
+    padding: 0.5rem 1rem;
+
+    display: grid;
+    grid-template-columns: repeat(2, min-content);
+    gap: 1rem;
+    align-items: center;
+}
+
+.menu li:hover {
+    background-color: var(--theme-button-hover-color);
+}
+
+li svg {
+    height: 1.1rem;
+}
+
+#header {
+    z-index: 1;
+
+    box-shadow: 0 0.1rem 5px var(--theme-shadow-color);
+    padding: 1rem 2rem;
+    font-weight: bold;
+
+    display: grid;
+    grid-template-rows: auto auto;
+    gap: 1.5rem;
+}
+
+#header-top {
+    display: grid;
+    grid-template-columns: 1fr auto auto auto;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+#header-top svg {
+    height: 1.3rem;
+}
+
+#alarm {
+    cursor: pointer;
+}
+
+#alarm:hover {
+    color: var(--theme-accent-color);
+}
+
+#search-group {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+input[type=search] {
+    -webkit-appearance: none;
+    appearance: none;
+
+    width: 80%;
+    height: 1.6rem;
+
+    background-color: var(--theme-bg-color);
+    border-radius: 1rem;
+    border-style: none;
+    padding: 0 0.9rem;
+    font-size: 0.8rem;
+}
+
+input[type=search]:focus {
+    outline-style: none;
+}
+
+input[type="search"]::-webkit-search-cancel-button {
+    display: none;
+}
+
+.user-pic {
+    height: 2rem;
+    width: 2rem;
+    border-radius: 1rem;
+    background-size: cover;
+    background-position: center;
+}
+
+#header-bottom {
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#header-bottom .user-pic {
+    height: 3rem;
+    width: 3rem;
+    border-radius: 1.5rem;
+}
+
+#header-bottom .user,
+#trending .user {
+    display: grid;
+    grid: auto auto / auto 1fr;
+    align-items: center;
+    gap: 0.2rem;
+}
+
+#header-bottom .user-pic,
+#trending .user-pic {
+    margin-right: 0.8rem;
+
+    grid-row: 1 / span 2;
+}
+
+.user .user-id,
+.user .greeting {
+    align-self: end;
+}
+
+.user .user-name,
+.user .user-intro {
+    align-self: start;
+}
+
+#header-bottom .greeting {
+    font-size: 0.8rem;
+}
+
+#header-bottom .user-name {
+    font-size: 1.2rem;
+}
+
+.actions {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    gap: 1rem;
+}
+
+#header-bottom .button {
+    cursor: pointer;
+    background-color: var(--theme-color);
+    color: white;
+    border-radius: 1.5rem;
+    padding: 0.4rem 1.2rem;
+    font-size: 0.8rem;
+}
+
+#header-bottom .button:hover {
+    background-color: var(--theme-button-hover-color);
+}
+
+#board {
+    background-color: var(--theme-bg-color);
+    padding: 1rem;
+
+    display: grid;
+    grid: min-content 1fr / 3fr 1fr;
+    gap: 1rem;
+}
+
+.heading {
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 1rem 0.1rem 0.8rem;
+}
+
+#projects {
+    grid-row: 1 / span 2;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+}
+
+.card {
+    width: 100%;
+    
+    background-color: white;
+    border-radius: 0.5rem;
+    box-shadow: 0.1rem 0.1rem 5px var(--theme-shadow-color);
+    padding: 1.5rem;
+}
+
+#projects .card {
+    min-height: 150px;
+
+    border-left: 0.5rem solid var(--theme-accent-color);
+
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    gap: 0.2rem;
+}
+
+#projects .card:hover {
+    border-left: 0.5rem solid var(--theme-card-hover-color);
+}
+
+#projects .card .content {
+    max-height: 200px;
+    overflow: scroll;
+}
+
+
+#projects .card .actions {
+    justify-self: end;
+}
+
+#projects svg {
+    cursor: pointer;
+    border-radius: 1rem;
+    height: 1rem;
+}
+
+#projects svg:hover {
+    color: var(--theme-card-hover-color);
+}
+
+#projects .title {
+    font-weight: bold;
+    padding-top: 0.6rem;
+}
+
+.content,
+.user-intro {
+    color: var(--theme-content-color);
+    font-size: 0.9rem;
+}
+
+#announcements .card {
+    min-width: calc(150px + 10vw);
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 100%);
+    gap: 1rem;
+}
+
+#announcements .title {
+    font-weight: bold;
+    font-size: 0.9rem;
+    padding: 0.1rem 0;
+}
+#announcements .content {
+    font-size: 0.85rem;
+}
+
+.announcement {
+    border-top: 1px solid var(--theme-shadow-color);
+    padding-top: 1rem;
+}
+
+.announcement:first-child {
+    border-top: 0;
+    padding-top: 0.3rem;
+}
+
+#trending .card {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 100%);
+    gap: 1rem;
+}
+
+#trending .user {
+    cursor: pointer;
+}
+
+#trending .user-id,
+#trending .user-intro {
+    font-size: 0.8rem;
+}
+
+#user-pic-1 {
+    background-image: url(user_propic/pic_1.jpeg);
+}
+
+#user-pic-2 {
+    background: radial-gradient(circle, rgb(255,210,90) 0%, rgb(35 175 150) 100%);
+}
+
+#user-pic-3 {
+    background: linear-gradient(180deg, rgb(255,141,202) 0%, rgb(255,172,254) 35%, rgb(0,212,255) 100%);
+}
+
+#user-pic-4 {
+    background-image: url(user_propic/pic_4.jpeg);
+}
