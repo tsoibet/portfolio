@@ -50,54 +50,6 @@ a:visited {
     gap: 1.5rem;
 }
 
-#header-top {
-    display: grid;
-    grid-template-columns: 1fr auto auto auto;
-    align-items: center;
-    gap: 1.5rem;
-}
-
-#header-top svg {
-    height: 1.3rem;
-}
-
-#alarm {
-    cursor: pointer;
-}
-
-#alarm:hover {
-    color: var(--theme-accent-color);
-}
-
-#search-group {
-    display: grid;
-    grid-template-columns: auto 1fr;
-    gap: 0.5rem;
-    align-items: center;
-}
-
-input[type=search] {
-    -webkit-appearance: none;
-    appearance: none;
-
-    width: 80%;
-    height: 1.6rem;
-
-    background-color: var(--theme-bg-color);
-    border-radius: 1rem;
-    border-style: none;
-    padding: 0 0.9rem;
-    font-size: 0.8rem;
-}
-
-input[type=search]:focus {
-    outline-style: none;
-}
-
-input[type="search"]::-webkit-search-cancel-button {
-    display: none;
-}
-
 .user-pic {
     height: 2rem;
     width: 2rem;
@@ -263,8 +215,14 @@ input[type="search"]::-webkit-search-cancel-button {
     font-size: 0.9rem;
     padding: 0.1rem 0;
 }
-#announcements .content {
-    font-size: 0.85rem;
+
+ul {
+    list-style: none;
+    padding-top: 0.5rem;
+}
+
+li {
+    font-size: 0.8rem;
 }
 
 .announcement {
