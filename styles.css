@@ -9,7 +9,8 @@
     --theme-bg-color: rgb(224, 233, 238);
     --theme-color: rgb(41, 160, 230);
     --theme-accent-color: rgb(255, 198, 13);
-    --theme-content-color: rgb(119, 119, 119);
+    --theme-content-color: rgb(105, 105, 105);
+    --theme-skill-color: rgb(155, 155, 155);
     --theme-shadow-color: rgb(185, 185, 185);
     --theme-button-hover-color: rgb(57, 169, 235);
     --theme-card-hover-color: rgb(255, 211, 65);
@@ -173,6 +174,25 @@ a:visited {
     overflow: auto;
 }
 
+#projects .card .skill {
+    padding-top: 0.4rem;
+
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 0.25rem;
+}
+
+#projects .skill svg {
+    color: var(--theme-skill-color);
+    border-radius: 1rem;
+    height: 0.9rem;
+}
+
+#projects .skill span {
+    font-size: 0.8rem;
+    color: var(--theme-skill-color);
+}
+
 #projects .card .actions {
     padding-top: 0.5rem;
 
@@ -192,7 +212,7 @@ a:visited {
     color: var(--theme-card-hover-color);
 }
 
-#projects svg {
+#projects .actions svg {
     cursor: pointer;
     border-radius: 1rem;
     height: 1rem;
